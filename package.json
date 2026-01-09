@@ -10,7 +10,13 @@
     "build": "refine build",
     "start": "refine start",
     "lint": "next lint",
-    "refine": "refine"
+    "refine": "refine",
+    "prepare": "husky install",
+    "commit": "cz",
+    "release": "release-it",
+    "release:minor": "release-it --increment=minor",
+    "release:major": "release-it --increment=major",
+    "release:beta": "release-it --preRelease=beta"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
@@ -35,16 +41,28 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "@release-it/conventional-changelog": "^10.0.4",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
+    "commitizen": "^4.3.1",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "^15.0.3",
+    "husky": "^9.1.7",
+    "release-it": "^19.2.3",
     "typescript": "^5.8.3"
   },
   "refine": {
     "projectId": "EbqyHo-AwpRcN-KWs2OF"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
