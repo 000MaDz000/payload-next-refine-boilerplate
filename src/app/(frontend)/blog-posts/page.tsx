@@ -9,11 +9,12 @@ import {
   ShowButton,
   useTable,
 } from "@refinedev/antd";
-import { type BaseRecord, useMany } from "@refinedev/core";
+import { type BaseRecord, useMany, useTranslation } from "@refinedev/core";
 import { Space, Table } from "antd";
 import React from "react";
 
 export default function BlogPostList() {
+  const { translate: t } = useTranslation();
   const { result, tableProps } = useTable({
     syncWithLocation: true,
   });
@@ -32,11 +33,11 @@ export default function BlogPostList() {
   return (
     <List>
       <Table {...tableProps} rowKey="id">
-        <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="title" title={"Title"} />
+        <Table.Column dataIndex="id" title={t("blog-posts.fields.id")} />
+        <Table.Column dataIndex="title" title={t("blog-posts.fields.title")} />
         <Table.Column
           dataIndex="content"
-          title={"Content"}
+          title={t("blog-posts.fields.content")}
           render={(value: any) => {
             if (!value) return "-";
             return <MarkdownField value={value.slice(0, 80) + "..."} />;
@@ -44,23 +45,23 @@ export default function BlogPostList() {
         />
         <Table.Column
           dataIndex={"category"}
-          title={"Category"}
+          title={t("blog-posts.fields.category")}
           render={(value) =>
             categoryIsLoading ? (
-              <>Loading...</>
+              <>{t("loading")}</>
             ) : (
               categories?.find((item) => item.id === value?.id)?.title
             )
           }
         />
-        <Table.Column dataIndex="status" title={"Status"} />
+        <Table.Column dataIndex="status" title={t("blog-posts.fields.status.title")} />
         <Table.Column
           dataIndex={["createdAt"]}
-          title={"Created at"}
+          title={t("blog-posts.fields.createdAt")}
           render={(value: any) => <DateField value={value} />}
         />
         <Table.Column
-          title={"Actions"}
+          title={t("table.actions")}
           dataIndex="actions"
           render={(_, record: BaseRecord) => (
             <Space>

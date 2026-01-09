@@ -1,0 +1,173 @@
+{
+  "pages": {
+    "login": {
+      "title": "تسجيل الدخول إلى حسابك",
+      "signin": "تسجيل الدخول",
+      "signup": "إنشاء حساب",
+      "divider": "أو",
+      "fields": {
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور"
+      },
+      "errors": {
+        "validEmail": "عنوان البريد الإلكتروني غير صالح",
+        "requiredEmail": "البريد الإلكتروني مطلوب",
+        "requiredPassword": "كلمة المرور مطلوبة"
+      },
+      "buttons": {
+        "submit": "تسجيل الدخول",
+        "forgotPassword": "نسيت كلمة المرور؟",
+        "noAccount": "ليس لديك حساب؟",
+        "rememberMe": "تذكرني"
+      }
+    },
+    "forgotPassword": {
+      "title": "نسيت كلمة المرور؟",
+      "fields": {
+        "email": "البريد الإلكتروني"
+      },
+      "errors": {
+        "validEmail": "عنوان البريد الإلكتروني غير صالح",
+        "requiredEmail": "البريد الإلكتروني مطلوب"
+      },
+      "buttons": {
+        "submit": "إرسال تعليمات إعادة التعيين"
+      }
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "fields": {
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور"
+      },
+      "errors": {
+        "validEmail": "عنوان البريد الإلكتروني غير صالح",
+        "requiredEmail": "البريد الإلكتروني مطلوب",
+        "requiredPassword": "كلمة المرور مطلوبة"
+      },
+      "buttons": {
+        "submit": "إنشاء حساب",
+        "haveAccount": "هل لديك حساب بالفعل؟"
+      }
+    },
+    "updatePassword": {
+      "title": "تحديث كلمة المرور",
+      "fields": {
+        "password": "كلمة المرور الجديدة",
+        "confirmPassword": "تأكيد كلمة المرور الجديدة"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "كلمات المرور غير متطابقة",
+        "requiredPassword": "كلمة المرور مطلوبة",
+        "requiredConfirmPassword": "تأكيد كلمة المرور مطلوب"
+      },
+      "buttons": {
+        "submit": "تحديث"
+      }
+    },
+    "error": {
+      "info": "ربما نسيت إضافة مكون {{action}} إلى مورد {{resource}}.",
+      "404": "عذراً، الصفحة التي قمت بزيارتها غير موجودة.",
+      "resource404": "هل أنت متأكد من أنك قمت بإنشاء مورد {{resource}}.",
+      "backHome": "العودة للرئيسية"
+    }
+  },
+  "actions": {
+    "list": "القائمة",
+    "create": "إنشاء",
+    "edit": "تعديل",
+    "show": "عرض"
+  },
+  "buttons": {
+    "create": "إنشاء",
+    "save": "حفظ",
+    "logout": "تسجيل الخروج",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "cancel": "إلغاء",
+    "confirm": "هل أنت متأكد؟",
+    "filter": "تصفية",
+    "clear": "تفريغ",
+    "refresh": "تحديث",
+    "show": "عرض",
+    "undo": "تراجع",
+    "import": "استيراد",
+    "clone": "نسخ",
+    "notAccessTitle": "ليس لديك إذن للوصول"
+  },
+  "warnWhenUnsavedChanges": "هل أنت متأكد من أنك تريد المغادرة؟ لديك تغييرات غير محفوظة.",
+  "notifications": {
+    "success": "ناجح",
+    "error": "خطأ (كود الحالة: {{statusCode}})",
+    "undoable": "لديك {{seconds}} ثوانٍ للتراجع",
+    "createSuccess": "تم إنشاء {{resource}} بنجاح",
+    "createError": "حدث خطأ أثناء إنشاء {{resource}} (كود الحالة: {{statusCode}})",
+    "deleteSuccess": "تم حذف {{resource}} بنجاح",
+    "deleteError": "خطأ عند حذف {{resource}} (كود الحالة: {{statusCode}})",
+    "editSuccess": "تم تعديل {{resource}} بنجاح",
+    "editError": "خطأ عند تعديل {{resource}} (كود الحالة: {{statusCode}})",
+    "importProgress": "جارٍ الاستيراد: {{processed}}/{{total}}"
+  },
+  "loading": "جارٍ التحميل",
+  "tags": {
+    "clone": "نسخ"
+  },
+  "dashboard": {
+    "title": "لوحة القيادة"
+  },
+  "blog-posts": {
+    "blog-posts": "المقالات",
+    "fields": {
+      "id": "المعرف",
+      "title": "العنوان",
+      "category": "الفئة",
+      "status": {
+        "title": "الحالة",
+        "published": "منشور",
+        "draft": "مسودة",
+        "rejected": "مرفوض"
+      },
+      "content": "المحتوى",
+      "createdAt": "تاريخ الإنشاء"
+    },
+    "titles": {
+      "create": "إنشاء مقال",
+      "edit": "تعديل مقال",
+      "list": "المقالات",
+      "show": "عرض مقال"
+    }
+  },
+  "categories": {
+    "categories": "الفئات",
+    "fields": {
+      "id": "المعرف",
+      "title": "العنوان"
+    },
+    "titles": {
+      "create": "إنشاء فئة",
+      "edit": "تعديل فئة",
+      "list": "الفئات",
+      "show": "عرض فئة"
+    }
+  },
+  "table": {
+    "actions": "الإجراءات"
+  },
+  "documentTitle": {
+    "default": "ريفين",
+    "suffix": " | ريفين",
+    "blog-posts": {
+      "list": "المقالات | ريفين",
+      "show": "عرض مقال #{{id}} | ريفين",
+      "edit": "تعديل مقال #{{id}} | ريفين",
+      "create": "إنشاء مقال جديد | ريفين",
+      "clone": "نسخ مقال #{{id}} | ريفين"
+    }
+  },
+  "autoSave": {
+    "success": "تم الحفظ",
+    "error": "فشل الحفظ التلقائي",
+    "loading": "جارٍ الحفظ...",
+    "idle": "في انتظار التغييرات"
+  }
+}

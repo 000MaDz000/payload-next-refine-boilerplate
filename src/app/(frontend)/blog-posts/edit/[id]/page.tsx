@@ -1,10 +1,12 @@
 "use client";
 
 import { Edit, useForm, useSelect } from "@refinedev/antd";
+import { useTranslate } from "@refinedev/core";
 import { Form, Input, Select } from "antd";
 import React from "react";
 
 export default function BlogPostEdit() {
+  const t = useTranslate();
   const { formProps, saveButtonProps, query } = useForm({});
 
   const blogPostsData = query?.data?.data;
@@ -18,7 +20,7 @@ export default function BlogPostEdit() {
     <Edit saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
         <Form.Item
-          label={"Title"}
+          label={t("blog-posts.fields.title")}
           name={["title"]}
           rules={[
             {
@@ -29,7 +31,7 @@ export default function BlogPostEdit() {
           <Input />
         </Form.Item>
         <Form.Item
-          label={"Content"}
+          label={t("blog-posts.fields.content")}
           name="content"
           rules={[
             {
@@ -40,7 +42,7 @@ export default function BlogPostEdit() {
           <Input.TextArea rows={5} />
         </Form.Item>
         <Form.Item
-          label={"Category"}
+          label={t("blog-posts.fields.category")}
           name={["category", "id"]}
           initialValue={formProps?.initialValues?.category?.id}
           rules={[
@@ -52,7 +54,7 @@ export default function BlogPostEdit() {
           <Select {...categorySelectProps} />
         </Form.Item>
         <Form.Item
-          label={"Status"}
+          label={t("blog-posts.fields.status.title")}
           name={["status"]}
           initialValue={"draft"}
           rules={[
@@ -64,9 +66,9 @@ export default function BlogPostEdit() {
           <Select
             defaultValue={"draft"}
             options={[
-              { value: "draft", label: "Draft" },
-              { value: "published", label: "Published" },
-              { value: "rejected", label: "Rejected" },
+              { value: "draft", label: t("blog-posts.fields.status.draft") },
+              { value: "published", label: t("blog-posts.fields.status.published") },
+              { value: "rejected", label: t("blog-posts.fields.status.rejected") },
             ]}
             style={{ width: 120 }}
           />

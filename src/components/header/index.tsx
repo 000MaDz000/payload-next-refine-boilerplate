@@ -2,7 +2,7 @@
 
 import { ColorModeContext } from "@contexts/color-mode";
 import type { RefineThemedLayoutHeaderProps } from "@refinedev/antd";
-import { useGetIdentity } from "@refinedev/core";
+import { useGetIdentity, useTranslate } from "@refinedev/core";
 import {
   Avatar,
   Layout as AntdLayout,
@@ -12,6 +12,7 @@ import {
   Typography,
 } from "antd";
 import React, { useContext } from "react";
+import LanguageSelector from "../layout/LanguageSelector";
 
 const { Text } = Typography;
 const { useToken } = theme;
@@ -25,6 +26,7 @@ type IUser = {
 export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
   sticky = true,
 }) => {
+  const t = useTranslate();
   const { token } = useToken();
   const { data: user } = useGetIdentity<IUser>();
   const { mode, setMode } = useContext(ColorModeContext);
@@ -47,6 +49,7 @@ export const Header: React.FC<RefineThemedLayoutHeaderProps> = ({
   return (
     <AntdLayout.Header style={headerStyles}>
       <Space>
+        <LanguageSelector />
         <Switch
           checkedChildren="🌛"
           unCheckedChildren="🔆"

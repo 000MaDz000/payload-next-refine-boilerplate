@@ -1,18 +1,13 @@
 import { Metadata } from "next";
 import { cookies } from "next/headers";
 import React, { Suspense } from "react";
-import { Refine, GitHubBanner } from "@refinedev/core";
+import { GitHubBanner } from "@refinedev/core";
 import { DevtoolsProvider } from "@providers/devtools";
-import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-import { ThemedTitle, useNotificationProvider } from "@refinedev/antd";
-import routerProvider from "@refinedev/nextjs-router";
-
-import { dataProvider } from "@providers/data-provider";
+import { RefineKbarProvider } from "@refinedev/kbar";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "@refinedev/antd/dist/reset.css";
-import { AppIcon } from "@components/app-icon";
 import { ColorModeContextProvider } from "@contexts/color-mode";
-import { authProviderClient } from "@providers/auth-provider/auth-provider.client";
+import { RefineContext } from "@providers/refine-context";
 
 export const metadata: Metadata = {
   title: "Refine",
@@ -38,43 +33,7 @@ export default async function RootLayout({
         <AntdRegistry>
           <ColorModeContextProvider defaultMode={defaultMode}>
             <DevtoolsProvider>
-              <Refine
-                routerProvider={routerProvider}
-                dataProvider={dataProvider}
-                notificationProvider={useNotificationProvider}
-                authProvider={authProviderClient}
-                resources={[
-                  {
-                    name: "blog-posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
-                    meta: {
-                      canDelete: true,
-                    },
-                  },
-                  {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
-                    meta: {
-                      canDelete: true,
-                    },
-                  },
-                ]}
-                options={{
-                  syncWithLocation: true,
-                  warnWhenUnsavedChanges: true,
-                  projectId: "EbqyHo-AwpRcN-KWs2OF",
-                  title: { text: "Refine Project", icon: <AppIcon /> },
-                }}
-              >
-                {children}
-                <RefineKbar />
-              </Refine>
+              <RefineContext>{children}</RefineContext>
             </DevtoolsProvider>
           </ColorModeContextProvider>
         </AntdRegistry>

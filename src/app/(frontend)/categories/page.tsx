@@ -7,11 +7,12 @@ import {
   ShowButton,
   useTable,
 } from "@refinedev/antd";
-import type { BaseRecord } from "@refinedev/core";
+import { type BaseRecord, useTranslate } from "@refinedev/core";
 import { Space, Table } from "antd";
 import React from "react";
 
 export default function CategoryList() {
+  const t = useTranslate();
   const { tableProps } = useTable({
     syncWithLocation: true,
   });
@@ -19,10 +20,10 @@ export default function CategoryList() {
   return (
     <List>
       <Table {...tableProps} rowKey="id">
-        <Table.Column dataIndex="id" title={"ID"} />
-        <Table.Column dataIndex="title" title={"title"} />
+        <Table.Column dataIndex="id" title={t("categories.fields.id")} />
+        <Table.Column dataIndex="title" title={t("categories.fields.title")} />
         <Table.Column
-          title={"Actions"}
+          title={t("table.actions")}
           dataIndex="actions"
           render={(_, record: BaseRecord) => (
             <Space>
