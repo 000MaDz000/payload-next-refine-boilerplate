@@ -1,12 +1,13 @@
 import type { AuthProvider } from "@refinedev/core";
-import { cookies } from "next/headers";
+import { payloadPromise } from "@utils/payloadPromise";
+import { headers } from "next/headers";
 
 export const authProviderServer: Pick<AuthProvider, "check"> = {
   check: async () => {
-    const cookieStore = await cookies();
-    const auth = cookieStore.get("auth");
+    const [payload, userHeaders] = await Promise.all([payloadPromise, headers()]);
+    const auth = await payload.auth({ headers: userHeaders });
 
-    if (auth) {
+    if (auth.user) {
       return {
         authenticated: true,
       };

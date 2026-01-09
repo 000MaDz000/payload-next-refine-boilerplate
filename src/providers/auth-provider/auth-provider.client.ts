@@ -1,7 +1,6 @@
 "use client";
 
 import type { AuthProvider } from "@refinedev/core";
-import Cookies from "js-cookie";
 
 const API_URL = "/api";
 
@@ -71,13 +70,21 @@ export const authProviderClient: AuthProvider = {
           };
         }
       }
-    } catch (error) { }
 
-    return {
-      authenticated: false,
-      logout: true,
-      redirectTo: "/login",
-    };
+      // If response is not ok or data.user doesn't exist, return unauthenticated
+      return {
+        authenticated: false,
+        logout: true,
+        redirectTo: "/login",
+      };
+    } catch (error) {
+      // On network error, also return unauthenticated
+      return {
+        authenticated: false,
+        logout: true,
+        redirectTo: "/login",
+      };
+    }
   },
   getPermissions: async () => {
     // Fetch from /me
