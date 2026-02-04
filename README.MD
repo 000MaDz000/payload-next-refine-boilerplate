@@ -45,7 +45,7 @@ A production-ready, high-performance boilerplate for building data-driven applic
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/000MaDz000/payload-next-refine-boilerplate
     cd your-repo-name
     ```
 
